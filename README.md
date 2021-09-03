@@ -3,16 +3,16 @@
 
 The architecture consists of following -  
 Eureka Server - 
-    1. This is service registry server. All the micro services register themselves into Eureka server and the Eureka server knows all the client services running on each port and IP addresses. 
-    2. Need for Eureka server - In production when applications are deployed on cloud platforms, then all servers or containers use dynamic IPs. So we can’t store IPs and port of all the services in config files. 
-    3. Whenever service A wants to talk to  service B, they first talk to Eureka Server. Then Eureka provides the running instances of service B.
-    4. Whenever a new instance of a microservices comes up, it would register itself with Eureka server.
-    5. For service discovery, Eureka uses a central registry to maintain network locations of all micro services.
-    6. If for some reason the IP address and port of any service changes, new values will be immediately registered in the service registry. 
-    7. To enable eureka server you need to add @EnableEurekaServer annotation in the main class.
-    8. Whenever Eureka starts up, it will try to register itself as a client. So make sure to add this property in application.properties - “eureka.client.register-with-eureka=false”.
-    9. The services registering to Eureka (called Eureka clients) fetch the information from server and caches it locally. They use that info to contact other services. This property needs to be set for all the eureka clients.-“eureka.client.fetch-registry=true”.
-    10. To register any service with Eureka you need to add @EnableDiscoveryClient in the main class.
+1. This is service registry server. All the micro services register themselves into Eureka server and the Eureka server knows all the client services running on each port and IP addresses. 
+2. Need for Eureka server - In production when applications are deployed on cloud platforms, then all servers or containers use dynamic IPs. So we can’t store IPs and port of all the services in config files. 
+3. Whenever service A wants to talk to  service B, they first talk to Eureka Server. Then Eureka provides the running instances of service B.
+4. Whenever a new instance of a microservices comes up, it would register itself with Eureka server.
+5. For service discovery, Eureka uses a central registry to maintain network locations of all micro services.
+6. If for some reason the IP address and port of any service changes, new values will be immediately registered in the service registry. 
+7. To enable eureka server you need to add @EnableEurekaServer annotation in the main class.
+8. Whenever Eureka starts up, it will try to register itself as a client. So make sure to add this property in application.properties - “eureka.client.register-with-eureka=false”.
+9. The services registering to Eureka (called Eureka clients) fetch the information from server and caches it locally. They use that info to contact other services. This property needs to be set for all the eureka clients.-“eureka.client.fetch-registry=true”.
+10. To register any service with Eureka you need to add @EnableDiscoveryClient in the main class.
 
 
 
